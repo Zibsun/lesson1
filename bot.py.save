@@ -1,0 +1,2 @@
+rom telegram.ext import Updater
+print ("test")
