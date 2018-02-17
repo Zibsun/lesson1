@@ -1,0 +1,3 @@
+name = "Асхат"
+
+print (name)
