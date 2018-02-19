@@ -1,8 +1,9 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
+import settings
 
 
-logging.basicConfig(format='%(levelname)s - %(message)s',
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
  	level=logging.INFO,
 	filename='bot.log'
 	)
@@ -31,7 +32,7 @@ questions = ["Почему это важно для тебя?",
 answers = []
 
 def main():
-    updater = Updater("526728660:AAEctMCPi-coN2NZpXO0UfatdgWkcBcOzak")
+    updater = Updater(settings.TELEGRAM_API_KEY)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", greet_user))
     dp.add_handler(MessageHandler(Filters.text, talk_to_me))    
